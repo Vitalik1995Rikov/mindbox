@@ -26,7 +26,7 @@ const addTask = (): void => {
         <button onClick={addTask}>Add</button>
       </div>
       <div>
-        {todoList.map((task: ITask) => <TodoTask task={task}/>)}
+        {todoList.map((task: ITask, key: number) => <TodoTask task={task} key={key}/>)}
       </div>
     </div>
   );
