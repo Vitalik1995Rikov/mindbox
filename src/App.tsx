@@ -11,12 +11,17 @@ const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
   setTask(event.target.value)
   console.log(task)
 }
+
+const addTask = (): void => {
+  setTodoList([...todoList, task])
+}
+
   return (
     <div>
       <div>Todos</div>
       <div className='flex'>
         <input type="text" placeholder='What needs to be done?' onChange={handleChange}/>
-        <button>Add</button>
+        <button onClick={addTask}>Add</button>
       </div>
     </div>
   );
