@@ -1,5 +1,6 @@
 import React, {useState, ChangeEvent} from 'react';
 import { ITask } from './Interface';
+import TodoTask from './TodoTask';
 
 const App = () => {
 
@@ -24,6 +25,9 @@ const addTask = (): void => {
       <div className='flex'>
         <input type="text" placeholder='What needs to be done?' onChange={handleChange}/>
         <button onClick={addTask}>Add</button>
+      </div>
+      <div>
+        {todoList.map((task: ITask) => <TodoTask task={task}/>)}
       </div>
     </div>
   );
