@@ -15,6 +15,7 @@ const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
 const addTask = (): void => {
   const newTask = {name: task}
   setTodoList([...todoList, newTask])
+  console.log(todoList)
 }
 
   return (
