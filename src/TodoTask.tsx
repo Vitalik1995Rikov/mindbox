@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ITask } from "./Interface";
 
 interface Props {
@@ -6,12 +6,19 @@ interface Props {
 }
 
 const TodoTask = ({task}: Props) => {
+
+const [checkbox, setCheckbox] = useState<boolean>(false);
+
+const handleClick = (): void => {
+    setCheckbox(!checkbox)
+}
+
     return (
         <div>
-            <div>
+            <div onClick={handleClick}>
                 <input type="checkbox" />
             </div>
-            <div>
+            <div className={checkbox ? "line-through": "no-underline"}>
                 {task.name}
             </div>
         </div>

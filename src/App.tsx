@@ -22,7 +22,7 @@ const addTask = (): void => {
     <div>
       <div>Todos</div>
       <div className='flex'>
-        <input type="text" placeholder='What needs to be done?' onChange={handleChange}/>
+        <input type="text" placeholder='What needs to be done?' onChange={handleChange} value={task}/>
         <button onClick={addTask}>Add</button>
       </div>
       <div>
