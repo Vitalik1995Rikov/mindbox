@@ -9,6 +9,9 @@ const TodoTask = ({task}: Props) => {
     return (
         <div>
             <div>
+                <input type="checkbox" />
+            </div>
+            <div>
                 {task.name}
             </div>
         </div>
