@@ -10,13 +10,12 @@ const [todoList, setTodoList] = useState<ITask[]>([]);
 
 const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
   setTask(event.target.value)
-  console.log(task)
 }
 
 const addTask = (): void => {
   const newTask = {name: task}
   setTodoList([...todoList, newTask])
-  console.log(todoList)
+  setTask('');
 }
 
   return (
