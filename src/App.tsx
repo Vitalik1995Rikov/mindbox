@@ -22,8 +22,7 @@ const addTask = (): void => {
     <div>
       <div>Todos</div>
       <div className='flex'>
-        <input type="text" placeholder='What needs to be done?' onChange={handleChange} value={task}/>
-        <button onClick={addTask}>Add</button>
+        <input type="text" placeholder='What needs to be done?' onChange={handleChange} value={task} onKeyPress={e => e.key === 'Enter' && addTask()}/>
       </div>
       <div>
         {todoList.map((task: ITask, key: number) => <TodoTask task={task} key={key}/>)}
