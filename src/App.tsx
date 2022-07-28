@@ -13,7 +13,8 @@ const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
 }
 
 const addTask = (): void => {
-  setTodoList([...todoList, task])
+  const newTask = {name: task}
+  setTodoList([...todoList, newTask])
 }
 
   return (
