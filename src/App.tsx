@@ -18,6 +18,12 @@ const addTask = (): void => {
   setTask('');
 }
 
+const deleteTask = (taskToDelete: string): void => {
+  setTodoList(todoList.filter((task) => {
+    return task.name !== taskToDelete
+  }))
+}
+
   return (
     <div>
       <div>Todos</div>
@@ -25,7 +31,7 @@ const addTask = (): void => {
         <input type="text" placeholder='What needs to be done?' onChange={handleChange} value={task} onKeyPress={e => e.key === 'Enter' && addTask()}/>
       </div>
       <div>
-        {todoList.map((task: ITask, key: number) => <TodoTask task={task} key={key}/>)}
+        {todoList.map((task: ITask, key: number) => <TodoTask deleteTask={deleteTask} task={task} key={key}/>)}
       </div>
     </div>
   );
