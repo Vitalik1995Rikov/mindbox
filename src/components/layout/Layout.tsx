@@ -1,8 +1,18 @@
 import React, { FC } from "react";
+import Header from "./header/Header";
+import Sidebar from "./sidebar/Sidebar";
 
-const Layout:FC = () => {
+type Props = {
+    children?: React.ReactNode
+}
+
+const Layout:FC<Props> = ({children}) => {
     return (
-        <div></div>
+        <div>
+            <Header/>
+            <Sidebar/>
+            {children}
+        </div>
     )
 }
 
